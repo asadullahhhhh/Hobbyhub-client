@@ -1,7 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router';
+import { AuthContext } from '../../assets/Contexts/Context';
 
 const Login = () => {
+
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const {gLogIn} = use(AuthContext)
+
+    const handelLogin = () => {
+        gLogIn()
+            .then(res => {
+                navigate(location?.state || "/")
+            })
+            .catch(err => {
+                console.log(err.message);
+            })
+    }
+
     return (
       <>
         <div className="hero bg-base-200 min-h-[calc(100vh-65px)]">
@@ -55,6 +72,7 @@ const Login = () => {
 
                 <div className="py-5 mt-3 border-t border-gray-300">
                   <button
+                    onClick={handelLogin}
                     className="btn w-full bg-white text-black border-[#e5e5e5]"
                   >
                     <svg
