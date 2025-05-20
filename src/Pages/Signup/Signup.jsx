@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { AuthContext } from '../../assets/Contexts/Context';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
+import toast from 'react-hot-toast';
+import { updateProfile } from 'firebase/auth';
+import { auth } from '../../firebase.init';
 
 const Signup = () => {
   const [passErr, setPassErr] = useState(true);
   const [show, setShow] = useState(false);
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  // Global context
+  const { signUp } = use(AuthContext);
   
 
   // check password
@@ -18,6 +26,36 @@ const Signup = () => {
     }
   };
 
+  // Sign up functinality here
+  const handelSignup = (e) => {
+    e.preventDefault()
+
+    const form = e.target
+    const formData = new FormData(form)
+    const userInfo = Object.fromEntries(formData.entries())
+    console.log(userInfo);
+
+    if(passErr){
+      signUp(userInfo?.email, userInfo?.password)
+        .then(() => {
+          updateProfile(auth.currentUser, {
+            displayName: userInfo.name,
+            photoURL: userInfo.photo,
+          })
+            .then(() => {
+              navigate(location?.state || "/")
+            })
+        })
+        .catch(err => {
+          toast.error(err.message)
+        })
+      // console.log(userInfo);
+    }
+    else{
+      toast.error("Please check the password")
+    }
+  }
+
   // console.log(passErr);
 
   return (
@@ -29,7 +67,7 @@ const Signup = () => {
               <h1 className="text-5xl font-bold text-center mb-5">
                 Signup now!
               </h1>
-              <form className="w-full">
+              <form onSubmit={handelSignup} className="w-full">
                 <div className="space-y-3">
                   <div>
                     <label className="label">Name</label>

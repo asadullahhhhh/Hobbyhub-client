@@ -1,22 +1,40 @@
 import React, { use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../assets/Contexts/Context';
+import toast from 'react-hot-toast';
 
 const Login = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
 
-    const {gLogIn} = use(AuthContext)
+    const { gLogIn, logIn } = use(AuthContext);
 
+    // google login
     const handelLogin = () => {
         gLogIn()
-            .then(res => {
+            .then(() => {
                 navigate(location?.state || "/")
             })
             .catch(err => {
                 console.log(err.message);
             })
+    }
+
+    // emil and password based login
+    const handelSignIn = e => {
+      e.preventDefault()
+
+      const email = e.target.email.value
+      const password = e.target.password.value 
+      
+      logIn(email, password)
+        .then(() => {
+          navigate(location?.state || "/");
+        })
+        .catch(err => {
+          toast.error(err.message)
+        })
     }
 
     return (
@@ -28,7 +46,7 @@ const Login = () => {
                 <h1 className="text-5xl text-center font-bold mb-5">
                   Login now!
                 </h1>
-                <form className="w-full">
+                <form onSubmit={handelSignIn} className="w-full">
                   <div className="space-y-3">
                     <div>
                       <label className="label">Email</label>
