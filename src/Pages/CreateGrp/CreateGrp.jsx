@@ -2,9 +2,11 @@ import React from 'react';
 
 const CreateGrp = () => {
     return (
-        <div>
-            <h2>I am create group</h2>
-        </div>
+        <section>
+            <div className='max-w-7xl mx-auto'>
+
+            </div>
+        </section>
     );
 };
 

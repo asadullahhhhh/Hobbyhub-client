@@ -5,12 +5,28 @@ import Signup from "../Pages/Signup/Signup";
 import MyGroup from "../Pages/MyGroup/MyGroup";
 import CreateGrp from "../Pages/CreateGrp/CreateGrp";
 import AllGroup from "../Pages/AllGroup/AllGroup";
+import Homepage from "../Pages/Homepage/Homepage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: MainPage,
     children: [
+      {
+        index : true,
+        loader :async ()=> {
+          const [banners] = await Promise.all([
+            fetch("http://localhost:3000/banners"),
+          ]);
+
+          const [bannerData] = await Promise.all([
+            banners.json()
+          ])
+
+          return {bannerData}
+        } ,
+        Component : Homepage
+      },
       {
         path: "login",
         Component: Login,

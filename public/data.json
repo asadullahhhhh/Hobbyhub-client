@@ -1,0 +1,134 @@
+[
+  {
+    "groupName": "Weekend Art Vibes",
+    "hobbyCategory": "Drawing & Painting",
+    "description": "A weekend gathering for amateur and professional artists to draw, paint, and inspire each other.",
+    "meetingLocation": "Rangpur Shilpokola Academy",
+    "maxMembers": 15,
+    "startDate": "2025-06-01",
+    "imageUrl": "https://i.postimg.cc/50FTJjr4/drawing2.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Snap & Stroll",
+    "hobbyCategory": "Photography",
+    "description": "Explore nature and cityscapes while improving your photography skills together.",
+    "meetingLocation": "City Park, Rangpur",
+    "maxMembers": 10,
+    "startDate": "2025-06-05",
+    "imageUrl": "https://i.postimg.cc/y8QbSF46/photogra2.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Gamers United",
+    "hobbyCategory": "Video Gaming",
+    "description": "Weekly LAN parties and multiplayer sessions with fellow gamers.",
+    "meetingLocation": "CyberZone Gaming Cafe",
+    "maxMembers": 8,
+    "startDate": "2025-06-03",
+    "imageUrl": "https://i.postimg.cc/jSd15M1k/videogame.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Hook & Chill",
+    "hobbyCategory": "Fishing",
+    "description": "Early morning fishing trips and gear tips for beginners.",
+    "meetingLocation": "Teesta River Bank",
+    "maxMembers": 6,
+    "startDate": "2025-06-07",
+    "imageUrl": "https://i.postimg.cc/mZYpSxf5/fishing.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Run With Friends",
+    "hobbyCategory": "Running",
+    "description": "Group jogging and fitness challenges every week.",
+    "meetingLocation": "Rangpur Stadium Track",
+    "maxMembers": 20,
+    "startDate": "2025-06-02",
+    "imageUrl": "https://i.postimg.cc/zXkM8sxg/running.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Cooking Corner",
+    "hobbyCategory": "Cooking",
+    "description": "Learn new recipes together and share home-cooked meals.",
+    "meetingLocation": "Galib's Kitchen Studio",
+    "maxMembers": 12,
+    "startDate": "2025-06-08",
+    "imageUrl": "https://i.postimg.cc/mrnJK78p/cooking.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Book Lovers Circle",
+    "hobbyCategory": "Reading",
+    "description": "Share, read, and discuss your favorite books every month.",
+    "meetingLocation": "Rangpur Public Library",
+    "maxMembers": 18,
+    "startDate": "2025-06-04",
+    "imageUrl": "https://i.postimg.cc/nrGdVmGJ/reading.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Writers' Nest",
+    "hobbyCategory": "Writing",
+    "description": "A quiet corner for writers to create, edit, and support each other.",
+    "meetingLocation": "Coffee House Lounge",
+    "maxMembers": 10,
+    "startDate": "2025-06-09",
+    "imageUrl": "https://i.postimg.cc/Hx5ZKRJj/writing2.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Board Game Bash",
+    "hobbyCategory": "Gaming",
+    "description": "Weekly board game nights for strategy and fun.",
+    "meetingLocation": "Youth Club Center",
+    "maxMembers": 14,
+    "startDate": "2025-06-06",
+    "imageUrl": "https://i.postimg.cc/dtFpMsjF/gaming.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Sketch & Sip",
+    "hobbyCategory": "Drawing & Painting",
+    "description": "Evening sketching sessions with light refreshments.",
+    "meetingLocation": "Local Art Cafe",
+    "maxMembers": 9,
+    "startDate": "2025-06-11",
+    "imageUrl": "https://i.postimg.cc/hvWwtcF9/drawing1.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Nature Clickers",
+    "hobbyCategory": "Photography",
+    "description": "Capture nature’s beauty with like-minded photographers.",
+    "meetingLocation": "Rangpur Botanical Garden",
+    "maxMembers": 12,
+    "startDate": "2025-06-13",
+    "imageUrl": "https://i.postimg.cc/44VqF7tw/photogra1.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  },
+  {
+    "groupName": "Weekend Storytellers",
+    "hobbyCategory": "Writing",
+    "description": "Write short stories, share ideas, and grow as a storyteller.",
+    "meetingLocation": "Community Hall Room B",
+    "maxMembers": 10,
+    "startDate": "2025-06-15",
+    "imageUrl": "https://i.postimg.cc/gjWSPsRs/writing1.jpg",
+    "userName": "Galib Hossain",
+    "userEmail": "galib@example.com"
+  }
+]
