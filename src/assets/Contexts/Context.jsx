@@ -7,6 +7,8 @@ const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
+    
+    const [darkLight, setDarkLight] = useState(false);
 
     // Email and Password Sign up
     const signUp = (email, password) => {
@@ -48,7 +50,9 @@ const AuthProvider = ({ children }) => {
     gLogIn,
     user,
     setUser,
-    logOut
+    logOut,
+    darkLight,
+    setDarkLight,
   };
 
   return <AuthContext value={userObj}>{children}</AuthContext>;

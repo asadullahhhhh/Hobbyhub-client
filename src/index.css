@@ -1,3 +1,4 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @import "react-tooltip/dist/react-tooltip.css";
+@custom-variant dark (&:where(.dark, .dark *));
