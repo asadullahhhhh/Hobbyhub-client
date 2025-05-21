@@ -35,7 +35,16 @@ const AuthProvider = ({ children }) => {
     useEffect(()=> {
         const unSubscirbe = onAuthStateChanged(auth, user => {
             if(user){
-                setUser(user)
+                // console.log(user)
+                fetch("http://localhost:3000/users")
+                    .then(res => res.json())
+                    .then(data => {
+                        // console.log(data);
+                        const userData = data.find(
+                          (u) => u.email === user.email
+                        );
+                        setUser(userData);
+                    })
             }
         })
 
@@ -55,7 +64,7 @@ const AuthProvider = ({ children }) => {
     setDarkLight,
   };
 
-  return <AuthContext value={userObj}>{children}</AuthContext>;
+  return <AuthContext.Provider value={userObj}>{children}</AuthContext.Provider>;
   
 };
 

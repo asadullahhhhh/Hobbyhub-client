@@ -13,19 +13,17 @@ export const router = createBrowserRouter([
     Component: MainPage,
     children: [
       {
-        index : true,
-        loader :async ()=> {
+        index: true,
+        loader: async () => {
           const [banners] = await Promise.all([
             fetch("http://localhost:3000/banners"),
           ]);
 
-          const [bannerData] = await Promise.all([
-            banners.json()
-          ])
+          const [bannerData] = await Promise.all([banners.json()]);
 
-          return {bannerData}
-        } ,
-        Component : Homepage
+          return { bannerData };
+        },
+        Component: Homepage,
       },
       {
         path: "login",
@@ -36,16 +34,17 @@ export const router = createBrowserRouter([
         Component: Signup,
       },
       {
-        path : "allgroups",
-        Component : AllGroup
+        path: "allgroups",
+        Component: AllGroup,
       },
       {
         path: "myGroups",
+        loader: () => fetch("http://localhost:3000/groups"),
         Component: MyGroup,
       },
       {
         path: "createGroups",
-        Component : CreateGrp
+        Component: CreateGrp,
       },
     ],
   },

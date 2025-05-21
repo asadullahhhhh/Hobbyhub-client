@@ -43,7 +43,28 @@ const Signup = () => {
             photoURL: userInfo.photo,
           })
             .then(() => {
-              navigate(location?.state || "/")
+              // console.log(res);
+            const newObj = {
+              name : auth.currentUser.displayName,
+              email : auth.currentUser.email,
+              photURL : auth.currentUser.photoURL,
+              groupCollection : []
+            }
+            
+            // post user
+            fetch("http://localhost:3000/users", {
+              method : "POST",
+              headers : {
+                "content-type" : "application/json"
+              },
+              body : JSON.stringify(newObj)
+            })
+              .then(res => res.json())
+              .then(data => {
+                if(data.insertedId){
+                  navigate(location?.state || "/")
+                }
+              })
             })
         })
         .catch(err => {

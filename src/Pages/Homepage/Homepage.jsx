@@ -1,28 +1,29 @@
-import React, { use } from 'react';
-import { useLoaderData } from 'react-router';
-import { AuthContext } from '../../assets/Contexts/Context';
-import Banner from '../../Components/BannerSlider/Banner';
-import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import React, { use, useContext } from "react";
+import { useLoaderData } from "react-router";
+import { AuthContext } from "../../assets/Contexts/Context";
+import Banner from "../../Components/BannerSlider/Banner";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const Homepage = () => {
-  const { darkLight } = use(AuthContext);
+  const { darkLight, user } = useContext(AuthContext);
 
   const { bannerData } = useLoaderData();
-  console.log(bannerData);
+  console.log(user);
 
   // React Simple Typewriter
   const [text] = useTypewriter({
-    words : ['Drawing & Painting ?',
-     'Photography ?',
-      'Video Gaming ?',
-      'Fishing ?',
-      'Running ?',
-      'Cooking ?',
-      'Reading ?',
-      'Writing ?',
-      ],
-    loop : 0
-  })
+    words: [
+      "Drawing & Painting ?",
+      "Photography ?",
+      "Video Gaming ?",
+      "Fishing ?",
+      "Running ?",
+      "Cooking ?",
+      "Reading ?",
+      "Writing ?",
+    ],
+    loop: 0,
+  });
 
   return (
     <section

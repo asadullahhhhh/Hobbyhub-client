@@ -5,7 +5,8 @@ import Swal from 'sweetalert2';
 const CreateGrp = () => {
 
     const {user} = use(AuthContext)
-    // console.log(user);
+    // console.log(user?.groupCollection);
+    const userID = user?._id 
 
     const categories = [
       "Drawing & Painting",
@@ -39,14 +40,27 @@ const CreateGrp = () => {
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
-                  Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Group create successfully",
-                    showConfirmButton: false,
-                    timer: 1500,
-                  });
-                  form.reset()
+                  user?.groupCollection.push(data.insertedId)
+                  fetch(`http://localhost:3000/users/${userID}`, {
+                    method: "PUT",
+                    headers: {
+                      "content-type": "application/json",
+                    },
+                    body: JSON.stringify(user),
+                  })
+                    .then(res => res.json())
+                    .then(data => {
+                      if(data.modifiedCount){
+                        Swal.fire({
+                          position: "center",
+                          icon: "success",
+                          title: "Group create successfully",
+                          showConfirmButton: false,
+                          timer: 1500,
+                        });
+                        form.reset();
+                      }
+                    })
                 }
             })
     }
@@ -145,7 +159,7 @@ const CreateGrp = () => {
                   <input
                     type="text"
                     name="userName"
-                    defaultValue={user?.displayName}
+                    defaultValue={user?.name}
                     readOnly
                     className="w-full p-2 border rounded-md bg-gray-100"
                   />
