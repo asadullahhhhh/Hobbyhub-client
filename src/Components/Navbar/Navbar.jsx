@@ -109,7 +109,7 @@ const Navbar = () => {
             <div
               data-tooltip-id="title"
               data-tooltip-content={user?.displayName}
-              className="h-[35px] w-[35px] rounded-full overflow-hidden"
+              className="h-[35px] w-[35px] rounded-full overflow-hidden z-10"
             >
               <img src={user?.photoURL} alt="" />
               <Tooltip id="title"></Tooltip>
